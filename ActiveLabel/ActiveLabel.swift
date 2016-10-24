@@ -282,7 +282,9 @@ typealias ElementTuple = (range: NSRange, element: ActiveElement, type: ActiveTy
 
             switch type {
             case .Mention: attributes[NSForegroundColorAttributeName] = mentionColor
-            case .Hashtag: attributes[NSForegroundColorAttributeName] = hashtagColor
+            case .Hashtag:
+                attributes[NSForegroundColorAttributeName] = hashtagColor
+                attributes[NSFontAttributeName] = UIFont.boldSystemFontOfSize(13)
             case .URL: attributes[NSForegroundColorAttributeName] = URLColor
             case .Custom: attributes[NSForegroundColorAttributeName] = customColor[type] ?? defaultCustomColor
             }
